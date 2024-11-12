@@ -1,0 +1,242 @@
+.title {
+    padding: 0.5rem 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.title span {
+    color: var(--secondary-color);
+}
+
+.title img {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+/* navbar */
+.navbar {
+    background-color: aliceblue;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    min-height: 70px;
+}
+
+
+/* logo  */
+.logo {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+
+/* ul  */
+.navMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+/*starts lightning effect css*/
+.navLink {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    font-family: "Abril Fatface", cursive;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+.navLink:before, .logo:before {
+    content: "";
+    width: 50px;
+    position: absolute;
+    top: 0;
+    left: -50px;
+    bottom: 0;
+    z-index: 9;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(rgba(255, 255, 255, 0.2)),
+        color-stop(50%, aliceblue),
+        to(rgba(255, 255, 255, 0.2))
+    );
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.2) 0%,
+        aliceblue 50%,
+        rgba(255, 255, 255, 0.2) 100%
+    );
+}
+
+/*Hover*/
+.navLink:hover, .logo:hover {
+    color:blueviolet;
+}
+
+.navLink:hover:before, .logo:hover:before {
+    -webkit-animation: lightning-effect 2s infinite ease-in-out;
+    animation: lightning-effect 2s infinite ease-in-out;
+}
+
+/*Keyframes*/
+@-webkit-keyframes lightning-effect {
+    0% {
+        left: -50px;
+        background: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 0.2)),
+            color-stop(50%, aliceblue),
+            to(rgba(255, 255, 255, 0.2))
+        );
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.2) 0%,
+            aliceblue 50%,
+            rgba(255, 255, 255, 0.2) 100%
+        );
+    }
+    50% {
+        left: 100%;
+    }
+    to {
+        left: -50px;
+        background: 0 0;
+    }
+}
+
+@keyframes lightning-effect {
+    0% {
+        left: -50px;
+        background: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 0.2)),
+            color-stop(50%, aliceblue),
+            to(rgba(255, 255, 255, 0.2))
+        );
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.2) 0%,
+            aliceblue 50%,
+            rgba(255, 255, 255, 0.2) 100%
+        );
+    }
+    50% {
+        left: 100%;
+    }
+    to {
+        left: -50px;
+        background: 0 0;
+    }
+}
+/*ends lightning effect css*/
+
+/*
+    MEDIA QUERIES	
+*/
+
+/*  Medium Devices (Tablets, 768px and up)  */
+@media screen and (max-width: 780px) {  
+    /* hamburger */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        background-color: #120f0b;
+        width: 20px;
+        height: 3px;
+        display: block;
+        margin: 5px;
+        -webkit-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+    }
+
+    /* adding active class to the bars  */
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* navMenu */
+    .navMenu{
+        position: absolute;
+        flex-direction: column;
+        gap: 0;
+        top: 50px;
+        left: -100%;
+        text-align: start;
+        width: 100%;
+        transition: 0.7s ease-in-out;
+        background-color: aliceblue;
+        padding: 5px;
+    }
+
+    .navMenu.active{
+        left: 0;
+    }
+
+    .navMenu li {
+        margin: 16px 0;
+    }
+}
+
+/*  Large Devices (Desktops, 992px and up)  */
+@media (min-width: 992px) {
+    
+}
+
+/*  X-Large Devices (Large Desktops, 1200px and up)  */
+@media (min-width: 1200px) {
+    
+}
+
+/*  XX-Large Devices (Larger Desktops, 1800px and up)  */
+@media (min-width: 1800px) {
+    
+}
+
+/*  XXX-Large Devices (Even Larger Desktops, 2000px and up)  */
+@media (min-width: 2000px) {
+    
+}
