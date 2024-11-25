@@ -1,7 +1,52 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import './../styles/home.css';
+import './../styles/hero.css';
 import { useHelmet } from '../hooks';
-import { CategoryCard, ProductCard } from '../components';
+import { CategoryCard, ProductCard, Hero } from '../components';
+
+interface Category {
+    id: number;
+    name: string;
+    image: string;
+}
+
+interface Product {
+    id: number;
+    name: string;
+    description: string;
+    price: string;
+    image: string;
+}
+
+interface News {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+}
+
+const categories: Category[] = [
+    { id: 1, name: 'Action', image: 'action.jpg' },
+    { id: 2, name: 'Comedy', image: 'comedy.jpg' },
+    { id: 3, name: 'Drama', image: 'drama.jpg' },
+    { id: 4, name: 'Fantasy', image: 'fantasy.jpg' },
+    { id: 5, name: 'Horror', image: 'horror.jpg' },
+    { id: 6, name: 'Romance', image: 'https://assets.jumpseller.com/store/mangabreria/themes/657459/options/132540500/Romance%20Nuevo.jpg' },
+];
+  
+const products: Product[] = [
+    { id: 1, name: 'Naruto', price: '10.99', description: '', image: 'naruto.jpg' },
+    { id: 2, name: 'One Piece', price: '12.99', description: '', image: 'one-piece.jpg' },
+    { id: 3, name: 'Attack on Titan', price: '14.99', description: '', image: 'attack-on-titan.jpg' },
+    { id: 4, name: 'Dragon Ball', price: '16.99', description: '', image: 'dragon-ball.jpg' },
+    { id: 5, name: 'Fullmetal Alchemist', price: '18.99', description: '', image: 'fullmetal-alchemist.jpg' },
+];
+  
+const news: News[] = [
+    { id: 1, title: 'New Anime Released', description: 'Check out the latest anime release', image: 'news1.jpg' },
+    { id: 2, title: 'Manga Sale', description: 'Get 20% off all manga', image: 'news2.jpg' },
+    { id: 3, title: 'New Merchandise', description: 'Check out our new merchandise', image: 'news3.jpg' },
+];
 
 const Home = (): JSX.Element => {
     const { Helmet } = useHelmet({
@@ -12,7 +57,9 @@ const Home = (): JSX.Element => {
         <main>
             <Helmet />
 
-            <div className="hero"></div>
+            <section id="home" className="section">
+                <Hero />
+            </section>
 
             <div className="section">
                 <div className="section-header">
@@ -20,21 +67,13 @@ const Home = (): JSX.Element => {
                 </div>
                 <div className="section-content">
                     <div className="categories-container">
-                        <CategoryCard
-                            title='Romance'
-                            image='romance'
-                            imageAlt='Romance - Tsubaki-chou Lonely Planet'
-                        />
-                        <CategoryCard
-                            title='Action'
-                            image='action'
-                            imageAlt='Action - Zipang'
-                        />
-                        <CategoryCard
-                            title='Fantasy'
-                            image='fantasy'
-                            imageAlt='Fantasy - Matou Seihei no Slave'
-                        />
+                        {categories.map((item, i) => (
+                            <CategoryCard
+                                title={item.name}
+                                image={item.image}
+                                imageAlt={item.name}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
@@ -57,46 +96,18 @@ const Home = (): JSX.Element => {
 
             <div className="section">
                 <div className="section-header">
-                    <h2>Popular Products</h2>
+                    <h2>Best Sellers</h2>
                 </div>
                 <div className="section-content">
                     <div className="products-container">
-                        <ProductCard
-                            title='Mato Seihei no Slave'
-                            image='matoseihei'
-                            description='This battle fantasy manga follows several heroines who protect people from the monsters that appear through a gate connecting to an alternate world known as the Mato.'
-                            price='$21.99'
-                        />
-                        <ProductCard
-                            title='Tsubaki-Chou Lonely Planet'
-                            image='tsubaki-chou'
-                            description="Ohno Fumi is a poor 2nd year high school student. Because of her father's debts, she's kicked out of her own home and has to rely on her own connections to survive. Thus begins her life as a live-in housekeeper for a reclusive writer."
-                            price='$26.99'
-                        />
-                        <ProductCard
-                            title='Yofukashi no Uta'
-                            image='yofukashi'
-                            description='Unable to sleep or find satisfaction in his daily life, Yamori Kou begins exploring the city at night, where he meets a strange girl who offers to help his insomnia by sleeping beside him.'
-                            price='$19.99'
-                        />
-                        <ProductCard
-                            title='Kaguya-sama: Love is War'
-                            image='kaguya-sama'
-                            description='Kaguya Shinomiya and Miyuki Shirogane are members of the prestigious student council. Love is war, and their battle to make the other confess begins now!'
-                            price='$26.99'
-                        />
-                        <ProductCard
-                            title='Kuzu no Honkai'
-                            image='kuzu'
-                            description="Mugi and Hanabi are the perfect high school couple...but their relationship is built on a single shared secret: They're each in love with someone else."
-                            price='$19.99'
-                        />
-                        <ProductCard
-                            title='Ganbare, Douki-chan!'
-                            image='douki-chan'
-                            description='"Cute" love story of girls who will stop at nothing but making the eyeless protagonist theirs!'
-                            price='$19.99'
-                        />
+                        {products.map((item, i) => (
+                            <ProductCard
+                                title={item.name}
+                                image={item.image}
+                                description={item.description}
+                                price={item.price}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>

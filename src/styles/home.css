@@ -1,4 +1,4 @@
-.hero {
+/*.hero {
     height: 30rem;
     background-image: url('./../../public/images/promotional-1.png');
     background-repeat: no-repeat;
@@ -6,7 +6,7 @@
     background-position: right;
     border-bottom: 0.1rem solid var(--div-color);
     overflow: hidden;
-}
+}*/
 
 .category-card {
     cursor: pointer;
