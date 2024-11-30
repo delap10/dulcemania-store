@@ -1,0 +1,51 @@
+.hero-slider {
+    block-size: 80vh;
+}
+
+.hero-slide {
+    position: relative;
+    block-size: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.slide-background {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-overlay {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slide-content {
+    position: relative;
+    z-index: 1;
+    /* text-align: center; */
+    padding-inline-start: 5rem;
+    margin-block-start: 4rem;
+}
+
+.slide-content h1 {
+    font-size: 3rem;
+    margin-block-end: 1rem;
+}
+
+.slide-content p {
+    font-size: 1.5rem;
+    margin-block-end: 2rem;
+    color: #000;
+    inline-size: 40%;
+}
