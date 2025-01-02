@@ -1,0 +1,45 @@
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+}
+
+.swiper-slide img {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+.swiper-slide .text-box {
+    background-color: rgba(0, 0, 15, 0.5);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 10px;
+    transition: opacity .5s;
+}
+
+.swiper-slide .text-box:hover {
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+.swiper-slide .text-box h2 {
+    font-size: 1.5em;
+    color: antiquewhite;
+    font-family: 'Bungee', Arial;
+}
+ 
+.swiper-slide .text-box p {
+    color: aliceblue;
+    font-size: 14px;
+}

@@ -14,10 +14,10 @@ const NavigationBar = (): JSX.Element => {
                 collapseOnSelect
                 expand="lg"
                 className="bg-body-tertiary"
-                style={{fontSize: 25}}
+                style={{fontSize: 20}}
             >
                 <Container>
-                    <Navbar.Brand href="/" title='Home' style={{fontSize: 35}}>家</Navbar.Brand>
+                    <Navbar.Brand href="/" title='Inicio' style={{fontSize: 30}}>家</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav
@@ -25,25 +25,22 @@ const NavigationBar = (): JSX.Element => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="/aboutus">About Us</Nav.Link>
-                            <Nav.Link href="/store">Store</Nav.Link>
-                            <NavDropdown title="Our work" id="collapsible-nav-dropdown">
+                            <Nav.Link href="/aboutus">Sobre nosotros</Nav.Link>
+                            <Nav.Link href="/store">Productos</Nav.Link>
+                            <NavDropdown title="Comunidad" id="collapsible-nav-dropdown">
                                 <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
-                                <NavDropdown.Item href="/gallery">Gallery</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">
-                                    Something
-                                </NavDropdown.Item>
+                                <NavDropdown.Item href="/gallery">Galería</NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="#action/3.4">
-                                    Separated link
+                                    Aventuras
                                 </NavDropdown.Item>
                             </NavDropdown>
-                            <Nav.Link href='/contact'>Contact</Nav.Link>
+                            <Nav.Link href='/contact'>Contáctanos</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">Sign</Nav.Link>
+                            <Nav.Link href="#deets">Registrarse</Nav.Link>
                             <Nav.Link eventKey={2} href="#memes">
-                                Login
+                                Iniciar sesión
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
