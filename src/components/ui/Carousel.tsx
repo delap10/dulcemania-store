@@ -23,7 +23,7 @@ const BannerCarousel = () => {
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                    src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122716/1-300x115.png"
+                    src={`/images/carousel/banner-offers-1-example.jpg`}
                     alt="Second slide"
                     className="d-block w-100"
                 />
@@ -34,12 +34,25 @@ const BannerCarousel = () => {
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                    src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122739/2-300x115.png"
+                    src={`/images/carousel/banner-offers-2-example.jpg`}
                     alt="Third slide"
                     className="d-block w-100"
                 />
                 <Carousel.Caption>
                     <h3>Third slide label</h3>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                    </p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    src={`/images/carousel/banner-offers-3-example.jpg`}
+                    alt="Fourth slide"
+                    className="d-block w-100"
+                />
+                <Carousel.Caption>
+                    <h3>Fourth slide label</h3>
                     <p>
                         Praesent commodo cursus magna, vel scelerisque nisl consectetur.
                     </p>

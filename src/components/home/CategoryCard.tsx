@@ -8,14 +8,15 @@ interface Card {
 
 const CategoryCard = ({ title, image, imageAlt }: Card): JSX.Element => {
     return (
-        <div className="category-card">
-            <picture>
-                <img src={image} alt={imageAlt} className='category-image' />
-            </picture>
-            <div className="category-title">
-                <h3>{title}</h3>
+        <a href='/'>
+            <div className="category-card">
+                <div className="category-wrapper">
+                    <img src={image + ".jpg"} alt={imageAlt} className='category-cover-image' />
+                </div>
+                <img src={image + "-title.svg"} alt={imageAlt} className="category-title" />
+                <img src={image + "-character.svg"} alt={imageAlt} className="category-character" />
             </div>
-        </div>
+        </a>
     );
 }
 
